@@ -67,5 +67,8 @@
   },
   "ember": {
     "edition": "octane"
+  },
+  "dependencies": {
+    "clean-css": "^4.1.11"
   }
 }
