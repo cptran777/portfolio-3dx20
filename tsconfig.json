@@ -6,20 +6,20 @@
     "allowSyntheticDefaultImports": true,
     "noImplicitAny": true,
     "noImplicitThis": true,
-    "alwaysStrict": true,
     "strictNullChecks": true,
-    "strictPropertyInitialization": true,
     "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "noEmitOnError": false,
+    "noEmitOnError": true,
     "noEmit": true,
     "inlineSourceMap": true,
     "inlineSources": true,
     "baseUrl": ".",
     "module": "es6",
+    "lib": ["es2017.object", "es2016", "dom", "dom.iterable", "scripthost"],
+    "listEmittedFiles": false,
     "experimentalDecorators": true,
+    "downlevelIteration": true,
     "paths": {
       "portfolio-3dx20/tests/*": [
         "tests/*"
@@ -32,6 +32,7 @@
       ]
     }
   },
+  "exclude": ["tmp", "dist", "vendor", ".git", ".gradle", ".idea", "logs"],
   "include": [
     "app/**/*",
     "tests/**/*",

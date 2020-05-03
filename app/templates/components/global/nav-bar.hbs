@@ -1,0 +1,15 @@
+<nav class="navbar">
+  <div class="navbar__background"></div>
+  <section class="navbar__image-wrapper">
+    <NachoAvatarImage
+      class="profile-image"
+      @img="assets/images/profile.jpg"
+      @altText="Charlie Tran"
+    />
+  </section>
+  <section class="navbar__title-wrapper">
+    <h1 class="navbar__title">Charlie Tran</h1>
+    <h2 class="navbar__subtitle">Sr. Software Engineer</h2>
+  </section>
+</nav>
+{{yield}}

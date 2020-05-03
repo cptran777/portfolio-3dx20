@@ -1,0 +1,60 @@
+$navbar-offset: 124px;
+
+.navbar {
+  height: 100vh;
+  min-height: $min-height;
+  width: 485px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  &__background {
+    background-color: get-color(primary-blue);
+    transform: skew(-20deg);
+    height: 100vh;
+    min-height: $min-height;
+    width: 600px;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: -225px;
+
+    &-container {
+      height: 0;
+      width: 0;
+      position: relative;
+    }
+  }
+
+  &__image-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 75px;
+  }
+
+  &__title {
+    &-wrapper {
+      color: get-color(secondary-blue);
+      text-align: center;
+    }
+
+    margin-right: $navbar-offset;
+    margin-bottom: 8px;
+    font-size: 24px;
+  }
+
+  &__subtitle {
+    margin-right: $navbar-offset;
+    font-size: 18px;
+    margin-top: 12px;
+  }
+}
+
+.profile-image {
+  height: 196px;
+  width: 196px;
+  margin-right: $navbar-offset;
+}
