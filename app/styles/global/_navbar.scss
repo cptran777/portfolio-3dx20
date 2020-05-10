@@ -1,38 +1,18 @@
 $navbar-offset: 124px;
 
 .navbar {
-  height: 100vh;
-  min-height: $min-height;
-  width: 485px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  transition: width 1s ease;
 
   &__background {
     background-color: get-color(primary-blue);
-    transform: skew(-20deg);
-    height: 100vh;
-    min-height: $min-height;
-    width: 600px;
+    transition: width 1s ease;
     z-index: -1;
     position: absolute;
-    top: 0;
-    left: -225px;
-
-    &-container {
-      height: 0;
-      width: 0;
-      position: relative;
-    }
   }
 
   &__image-wrapper {
     display: flex;
     justify-content: center;
-    margin-top: 75px;
   }
 
   &__title {
@@ -40,21 +20,180 @@ $navbar-offset: 124px;
       color: get-color(secondary-blue);
       text-align: center;
     }
-
-    margin-right: $navbar-offset;
-    margin-bottom: 8px;
-    font-size: 24px;
   }
 
-  &__subtitle {
-    margin-right: $navbar-offset;
-    font-size: 18px;
-    margin-top: 12px;
+  &__expand-button {
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .profile-image {
+    transition: height 1s ease, width 1s ease;
   }
 }
 
-.profile-image {
-  height: 196px;
-  width: 196px;
-  margin-right: $navbar-offset;
+.navbar--desktop {
+  .navbar {
+    &__background {
+      height: 100vh;
+      min-height: $min-height;
+    }
+
+    &__expand-button {
+      transition: width 1s ease;
+      background-color: get-color(secondary-blue);
+      border-radius: 25px;
+      padding: 4px 8px;
+
+      &:hover {
+        background-color: get-color(primary-blue);
+      }
+    }
+
+    &__toggle {
+      font-weight: bold;
+      color: get-color(white);
+    }
+  }
+}
+
+.navbar--desktop {
+  &.navbar {
+    height: 100vh;
+    min-height: $min-height;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 9001;
+    align-items: center;
+
+    &.navbar {
+      &--is-expanded {
+        width: 485px;
+        overflow: hidden;
+
+        .profile-image {
+          height: 196px;
+          width: 196px;
+          margin-right: $navbar-offset;
+        }
+
+        .navbar {
+          &__background {
+            transform: skew(-20deg);
+            width: 600px;
+
+            top: 0;
+            left: -225px;
+
+            &-container {
+              height: 0;
+              width: 0;
+              position: relative;
+            }
+          }
+
+          &__image-wrapper {
+            margin-top: 75px;
+          }
+
+          &__title {
+            margin-right: $navbar-offset;
+            margin-bottom: 8px;
+            font-size: 24px;
+          }
+
+          &__subtitle {
+            margin-right: $navbar-offset;
+            font-size: 18px;
+            margin-top: 12px;
+          }
+
+          &__expand-button {
+            position: absolute;
+            top: 48px;
+            right: 0px;
+            padding: 4px 12px;
+            width: 124px;
+            border: 1px solid white;
+            border-radius: 25px;
+          }
+
+          &__links {
+            display: flex;
+            flex-direction: column;
+          }
+
+          &__link {
+            padding: 4px 12px;
+            border-radius: 25px;
+            background-color: get-color(secondary-blue);
+            color: get-color(primary-blue);
+            text-align: center;
+            margin-top: 8px;
+            border: 1px solid get-color(white);
+            width: 124px;
+            position: relative;
+            cursor: pointer;
+
+            &:hover {
+              background-color: get-color(primary-blue);
+              color: get-color(secondary-blue);
+            }
+
+            &:first-child {
+              left: 48px;
+            }
+
+            &:nth-child(2) {
+              left: 36px;
+            }
+
+            &:nth-child(3) {
+              left: 24px;
+            }
+
+            &:nth-child(4) {
+              left: 12px;
+            }
+          }
+        }
+      }
+
+      &--is-collapsed {
+        width: 96px;
+
+        .profile-image {
+          height: 56px;
+          width: 56px;
+          margin-top: 12px;
+        }
+
+        .navbar {
+          &__background {
+            width: 96px;
+          }
+
+          &__icon {
+            height: 56px;
+            width: 56px;
+            color: get-color(secondary-blue);
+            margin-top: 12px;
+          }
+
+          &__expand-button {
+            width: 56px;
+            position: absolute;
+            top: 8px;
+            right: -12px;
+          }
+        }
+      }
+    }
+  }
 }

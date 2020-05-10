@@ -1,4 +1,19 @@
-<nav class="navbar">
+<nav class="navbar navbar--{{this.screenResolution}} navbar--{{this.expandedStateClassSuffix}}">
+  <button
+    class="navbar__expand-button navbar__expand-button--{{this.expandedStateClassSuffix}}"
+    type="button"
+    {{on "click" this.toggleExpanded}}
+  >
+    {{#if this.isExpanded}}
+      <FaIcon @icon="chevron-left" class="navbar__toggle" />
+      <FaIcon @icon="chevron-left" class="navbar__toggle" />
+      <FaIcon @icon="chevron-left" class="navbar__toggle" />
+    {{else}}
+      <FaIcon @icon="chevron-right" class="navbar__toggle" />
+      <FaIcon @icon="chevron-right" class="navbar__toggle" />
+      <FaIcon @icon="chevron-right" class="navbar__toggle" />
+    {{/if}}
+  </button>
   <div class="navbar__background"></div>
   <section class="navbar__image-wrapper">
     <NachoAvatarImage
@@ -7,9 +22,23 @@
       @altText="Charlie Tran"
     />
   </section>
-  <section class="navbar__title-wrapper">
-    <h1 class="navbar__title">Charlie Tran</h1>
-    <h2 class="navbar__subtitle">Sr. Software Engineer</h2>
-  </section>
+  {{#if this.isExpanded}}
+    <section class="navbar__title-wrapper">
+      <h1 class="navbar__title">Charlie Tran</h1>
+      <h2 class="navbar__subtitle">Sr. Software Engineer</h2>
+    </section>
+    <section class="navbar__links">
+      <a class="navbar__link">Home</a>
+      <a class="navbar__link">Portfolio</a>
+      <a class="navbar__link">Interests</a>
+      <a class="navbar__link">LinkedIn</a>
+      <a class="navbar__link">Github</a>
+    </section>
+  {{else}}
+    <FaIcon @icon="palette" class="navbar__icon" />
+    <FaIcon @icon="gamepad" class="navbar__icon" />
+    <FaIcon @icon="linkedin" class="navbar__icon" @prefix="fab" />
+    <FaIcon @icon="github" class="navbar__icon" @prefix="fab" />
+  {{/if}}
 </nav>
 {{yield}}
