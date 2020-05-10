@@ -25,14 +25,16 @@
   {{#if this.isExpanded}}
     <section class="navbar__title-wrapper">
       <h1 class="navbar__title">Charlie Tran</h1>
-      <h2 class="navbar__subtitle">Sr. Software Engineer</h2>
+      <h2 class="navbar__subtitle">
+        Sr. Software Engineer
+        <FaIcon @icon="linkedin" class="navbar__title-icon" @prefix="fab" />
+        <FaIcon @icon="github" class="navbar__title-icon" @prefix="fab" />
+      </h2>
     </section>
     <section class="navbar__links">
       <a class="navbar__link">Home</a>
       <a class="navbar__link">Portfolio</a>
       <a class="navbar__link">Interests</a>
-      <a class="navbar__link">LinkedIn</a>
-      <a class="navbar__link">Github</a>
     </section>
   {{else}}
     <FaIcon @icon="palette" class="navbar__icon" />
