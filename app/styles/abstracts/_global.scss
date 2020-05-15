@@ -12,5 +12,18 @@ body, div, section, nav {
   box-sizing: border-box;
 }
 
+a {
+  color: inherit;
+  text-decoration: inherit;
+
+  &:hover {
+    color: inherit;
+  }
+
+  &:visited {
+    color: inherit;
+  }
+}
+
 $min-height: 600px;
 $base-width: 1140px;

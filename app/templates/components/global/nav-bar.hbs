@@ -27,20 +27,32 @@
       <h1 class="navbar__title">Charlie Tran</h1>
       <h2 class="navbar__subtitle">
         Sr. Software Engineer
-        <FaIcon @icon="linkedin" class="navbar__title-icon" @prefix="fab" />
-        <FaIcon @icon="github" class="navbar__title-icon" @prefix="fab" />
+        <a href="https://www.linkedin.com/in/charlie-tran" rel="noopener noreferrer" target="_blank">
+          <FaIcon @icon="linkedin" class="navbar__title-icon" @prefix="fab" />
+        </a>
+        <a href="https://github.com/cptran777" rel="noopener noreferrer" target="_blank">
+          <FaIcon @icon="github" class="navbar__title-icon" @prefix="fab" />
+        </a>
       </h2>
     </section>
     <section class="navbar__links">
-      <a class="navbar__link">Home</a>
-      <a class="navbar__link">Portfolio</a>
-      <a class="navbar__link">Interests</a>
+      <LinkTo @route="index" class="navbar__link">Home</LinkTo>
+      <LinkTo @route="portfolio" class="navbar__link">Portfolio</LinkTo>
+      <LinkTo @route="interests" class="navbar__link">Interests</LinkTo>
     </section>
   {{else}}
-    <FaIcon @icon="palette" class="navbar__icon" />
-    <FaIcon @icon="gamepad" class="navbar__icon" />
-    <FaIcon @icon="linkedin" class="navbar__icon" @prefix="fab" />
-    <FaIcon @icon="github" class="navbar__icon" @prefix="fab" />
+    <LinkTo @route="portfolio">
+      <FaIcon @icon="palette" class="navbar__icon" />
+    </LinkTo>
+    <LinkTo @route="interests">
+      <FaIcon @icon="gamepad" class="navbar__icon" />
+    </LinkTo>
+    <a href="https://www.linkedin.com/in/charlie-tran" rel="noopener noreferrer" target="_blank">
+      <FaIcon @icon="linkedin" class="navbar__icon" @prefix="fab" />
+    </a>
+    <a href="https://github.com/cptran777" rel="noopener noreferrer" target="_blank">
+      <FaIcon @icon="github" class="navbar__icon" @prefix="fab" />
+    </a>
   {{/if}}
 </nav>
 {{yield}}

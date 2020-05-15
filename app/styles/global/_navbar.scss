@@ -110,6 +110,10 @@ $navbar-offset: 124px;
             &-icon {
               margin-left: 4px;
               cursor: pointer;
+
+              &:hover {
+                color: get-color(white);
+              }
             }
           }
 
@@ -190,6 +194,10 @@ $navbar-offset: 124px;
             color: get-color(secondary-blue);
             margin-top: 12px;
             cursor: pointer;
+
+            &:hover {
+              color: get-color(white);
+            }
           }
 
           &__expand-button {
