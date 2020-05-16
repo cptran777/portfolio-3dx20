@@ -1,0 +1,14 @@
+<section class="desktop-intro-panel">
+  <div class="intro-label__container" {{did-insert this.onInsert}}>
+    {{#each this.panelLabels as |label|}}
+      {{#if this.panelLabel}}
+        <h3
+          class="intro-label__title {{if (eq this.panelLabel label) "intro-label__title--active" (if (eq label this.onDeckLabel) "intro-label__title--on-deck" "intro-label__title--inactive")}}"
+        >
+          {{label}}
+        </h3>
+      {{/if}}
+    {{/each}}
+  </div>
+</section>
+{{yield}}

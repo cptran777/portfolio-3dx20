@@ -1,0 +1,46 @@
+.desktop-intro-panel {
+  height: 100vh;
+  min-height: 600px;
+  width: 100vw;
+  background-image: url('/assets/images/space-photo.jpeg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: get-color(black);
+  padding-left: 96px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: get-color(white);
+}
+
+.intro-label {
+  &__container {
+    overflow: hidden;
+    height: 48px;
+    position: relative;
+    width: 256px;
+  }
+
+  &__title {
+    font-size: 36px;
+    position: absolute;
+    right: 0;
+    margin: 12px;
+    padding: 0;
+
+    &--active {
+      top: -20px;
+      transition: top 1s ease;
+    }
+
+    &--on-deck {
+      top: 36px;
+    }
+
+    &--inactive {
+      transition: top 1s ease;
+      top: -72px;
+    }
+  }
+}

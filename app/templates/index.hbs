@@ -1,2 +1,4 @@
-<h1>We are on the index route</h1>
+{{#if (or (eq this.screenResolution "desktop") (eq this.screenResolution "laptop"))}}
+  <Desktop::IntroPanel />
+{{/if}}
 {{outlet}}
