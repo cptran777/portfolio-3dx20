@@ -16,7 +16,7 @@
 .about-me--desktop {
   .about-me {
     &__title {
-      font-size: 36px;
+      @include section-title(desktop);
     }
 
     &__bio {

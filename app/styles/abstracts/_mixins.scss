@@ -1,0 +1,5 @@
+@mixin section-title($type) {
+  @if $type == desktop {
+    font-size: 36px;
+  }
+}

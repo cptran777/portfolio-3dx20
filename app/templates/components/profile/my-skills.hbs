@@ -1,0 +1,13 @@
+<section class="my-skills my-skills--{{this.screenResolution}}">
+  <h3 class="my-skills__title">My Skills</h3>
+  <div class="my-skills__skill-container">
+    {{#each this.skills as |skill|}}
+      <img
+        class="my-skills__skill"
+        src={{skill.asset}}
+        alt={{skill.name}}
+      />
+    {{/each}}
+  </div>
+</section>
+{{yield}}
