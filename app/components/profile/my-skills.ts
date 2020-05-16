@@ -9,8 +9,6 @@ const skills = [
   { name: 'Ember JS', asset: 'ember.png' },
   { name: 'Redux', asset: 'redux.png' },
   { name: 'React', asset: 'react.png' },
-  { name: 'HTML', asset: 'html5.png' },
-  { name: 'CSS', asset: 'css3.png' },
   { name: 'jQuery', asset: 'jquery.gif' },
   { name: 'D3', asset: 'd3.png' },
   { name: 'Highcharts', asset: 'highcharts.jpg' },
@@ -23,7 +21,10 @@ const skills = [
   { name: 'PostgreSQL', asset: 'postgres.png' },
   { name: 'Python', asset: 'python.png' },
   { name: 'WebSockets', asset: 'websocket.png' },
-  { name: 'WebRTC', asset: 'webrtc.png' }
+  { name: 'WebRTC', asset: 'webrtc.png' },
+  { name: 'Unity', asset: 'unity.png' },
+  { name: 'C#', asset: 'csharp.png' },
+  { name: 'RPG Maker', asset: 'rpg-maker-mv.png' }
 ].map(skill => ({
   ...skill,
   asset: `${logoImageRoot}logo-${skill.asset}`
