@@ -1,0 +1,27 @@
+.about-me {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: get-color(primary-blue);
+  background-color: get-color(secondary-blue5);
+
+  &--desktop {
+    min-height: 600px;
+    padding-left: $min-navbar-width;
+  }
+}
+
+.about-me--desktop {
+  .about-me {
+    &__title {
+      font-size: 36px;
+    }
+
+    &__bio {
+      width: 600px;
+      max-width: 100vw;
+    }
+  }
+}

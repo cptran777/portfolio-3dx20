@@ -5,7 +5,7 @@ import THREE from 'three';
 
 interface DesktopIntroPanelArgs {}
 
-const panelLabels = ['Engineer', 'Artist', 'Musician', 'Explorer', 'Gamer'];
+const panelLabels = ['Engineer', 'Artist', 'Musician', 'Traveler', 'Gamer'];
 
 export default class DesktopIntroPanel extends Component<DesktopIntroPanelArgs> {
   @tracked
