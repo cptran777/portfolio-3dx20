@@ -45,7 +45,7 @@ export default class DesktopIntroPanel extends Component<DesktopIntroPanelArgs> 
     renderer.setSize(600, 500);
     element.appendChild(renderer.domElement);
     var geometry = new THREE.BoxGeometry(250, 250, 250);
-    var material = new THREE.MeshBasicMaterial({ color: 0x99ff99 });
+    var material = new THREE.MeshBasicMaterial({ color: 0x81d2ff });
     var cube = new THREE.Mesh(geometry, material);
     scene.add(cube);
 
