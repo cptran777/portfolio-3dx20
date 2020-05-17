@@ -67,10 +67,26 @@
 
       &-3 {
         left: 300px + (96px * 3) + 48px;
+        cursor: default;
       }
 
       &--3 {
         left: 300px - (96px * 4) - 48px;
+        cursor: default;
+      }
+
+      @for $i from -4 through -10 {
+        &-#{$i} {
+          left: 0;
+          display: none;
+        }
+      }
+
+      @for $i from 4 through 10 {
+        &-#{$i} {
+          left: 600;
+          display: none;
+        }
       }
     }
   }
@@ -78,6 +94,22 @@
   &__content {
     width: 600px;
     height: 500px;
+    position: relative;
+  }
+
+  &__component {
+    width: 500px;
+    height: 500px;
+    color: get-color(secondary-blue);
+    opacity: 0;
+    transition: opacity 1s ease;
+    position: absolute;
+    top: 0px;
+    left: 50px;
+
+    &--active {
+      opacity: 1;
+    }
   }
 
   &__selection {

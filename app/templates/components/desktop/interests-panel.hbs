@@ -1,11 +1,18 @@
 <section class="interests-desktop-panel">
   <div class="interests-desktop-panel__content">
-    <button {{on "click" this.incrementIndex}}>+</button>
-    <button {{on "click" this.decrementIndex}}>-</button>
+    {{#each this.interestComponents as |interestComponentName|}}
+      {{#let (eq interestComponentName this.currentComponent) as |isActive|}}
+        {{component
+          interestComponentName
+          class=(concat "interests-desktop-panel__component" (if isActive " interests-desktop-panel__component--active"))
+        }}
+      {{/let}}
+    {{/each}}
   </div>
   <div class="interests-desktop-panel__selection">
     {{#each this.interests as |interest index|}}
       <div
+        {{on "click" (fn this.setActiveIndex index)}}
         class="interests-desktop-panel__icon-container interests-desktop-panel__icon-container--offset-{{subtract index this.centerIndex}}"
       >
         <img
