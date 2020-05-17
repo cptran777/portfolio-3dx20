@@ -135,6 +135,7 @@
     background: none;
     border: none;
     color: get-color(white);
+    z-index: 100;
 
     &:hover {
       color: get-color(secondary-blue);
@@ -160,6 +161,29 @@
 
     &::-webkit-scrollbar {
       display: none;
+    }
+  }
+}
+
+.desktop-interests-gaming {
+  &__content {
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+
+  &__img {
+    height: 380px;
+    width: 540px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.75s ease;
+
+    &--active {
+      opacity: 0.9;
     }
   }
 }

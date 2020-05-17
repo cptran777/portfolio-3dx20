@@ -1,3 +1,12 @@
-<div class={{@class}}>
-  Gaming
+<div class="{{@class}}">
+  <h3>Gaming</h3>
+  <div class="desktop-interests-gaming__content" {{did-insert this.triggerCurrentGameUpdate}}>
+    {{#each games as |game idx|}}
+      <img
+        src={{game.asset}}
+        alt={{game.title}}
+        class="desktop-interests-gaming__img {{if (eq idx this.currentGameIndex) "desktop-interests-gaming__img--active"}}"
+      />
+    {{/each}}
+  </div>
 </div>
