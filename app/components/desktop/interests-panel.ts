@@ -52,12 +52,12 @@ export default class DesktopInterestsPanel extends Component<DesktopInterestsPan
 
   @action
   incrementIndex(): void {
-    this.centerIndex = Math.min(interests.length - 1, this.centerIndex + 1);
+    this.setActiveIndex(Math.min(interests.length - 1, this.activeIndex + 1));
   }
 
   @action
   decrementIndex(): void {
-    this.centerIndex = Math.max(0, this.centerIndex - 1);
+    this.setActiveIndex(Math.max(0, this.activeIndex - 1));
   }
 
   @action

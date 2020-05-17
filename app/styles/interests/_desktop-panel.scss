@@ -92,23 +92,27 @@
   }
 
   &__content {
-    width: 600px;
+    width: 660px;
     height: 500px;
     position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
   }
 
   &__component {
-    width: 500px;
+    width: 540px;
     height: 500px;
     color: get-color(secondary-blue);
     opacity: 0;
     transition: opacity 1s ease;
     position: absolute;
     top: 0px;
-    left: 50px;
+    left: 55px;
 
     &--active {
       opacity: 1;
+      z-index: 100;
     }
   }
 
@@ -117,5 +121,45 @@
     position: relative;
     width: 600px;
     height: 96px;
+    margin-top: 2px;
+  }
+
+  &__navigator {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  &__navigation-btn {
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: get-color(white);
+
+    &:hover {
+      color: get-color(secondary-blue);
+    }
+  }
+
+  &__navigation-icon {
+    transform: scaleY(4);
+  }
+}
+
+.desktop-interests-virtual-reality {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__content {
+    height: 380px;
+    width: 540px;
+    overflow: scroll;
+    text-align: justify;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 }

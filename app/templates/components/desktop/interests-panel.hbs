@@ -1,5 +1,13 @@
 <section class="interests-desktop-panel">
   <div class="interests-desktop-panel__content">
+    <div class="interests-desktop-panel__navigator">
+      <button
+        {{on "click" this.decrementIndex}}
+        class="interests-desktop-panel__navigation-btn"
+      >
+        <FaIcon @icon="chevron-left" @size="2x" class="interests-desktop-panel__navigation-icon" />
+      </button>
+    </div>
     {{#each this.interestComponents as |interestComponentName|}}
       {{#let (eq interestComponentName this.currentComponent) as |isActive|}}
         {{component
@@ -8,6 +16,14 @@
         }}
       {{/let}}
     {{/each}}
+    <div class="interests-desktop-panel__navigator">
+      <button
+        {{on "click" this.incrementIndex}}
+        class="interests-desktop-panel__navigation-btn"
+      >
+        <FaIcon @icon="chevron-right" @size="2x" class="interests-desktop-panel__navigation-icon" />
+      </button>
+    </div>
   </div>
   <div class="interests-desktop-panel__selection">
     {{#each this.interests as |interest index|}}
