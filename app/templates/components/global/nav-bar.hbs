@@ -16,11 +16,13 @@
   </button>
   <div class="navbar__background"></div>
   <section class="navbar__image-wrapper">
-    <NachoAvatarImage
-      class="profile-image"
-      @img="assets/images/profile.jpg"
-      @altText="Charlie Tran"
-    />
+    <LinkTo @route="index">
+      <NachoAvatarImage
+        class="profile-image"
+        @img="assets/images/profile.jpg"
+        @altText="Charlie Tran"
+      />
+    </LinkTo>
   </section>
   {{#if this.isExpanded}}
     <section class="navbar__title-wrapper">

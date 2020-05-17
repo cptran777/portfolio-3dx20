@@ -9,7 +9,7 @@ const skills = [
   { name: 'Ember JS', asset: 'ember.png' },
   { name: 'Redux', asset: 'redux.png' },
   { name: 'React', asset: 'react.png' },
-  { name: 'jQuery', asset: 'jquery.gif' },
+  { name: 'TypesScript', asset: 'typescript.svg' },
   { name: 'D3', asset: 'd3.png' },
   { name: 'Highcharts', asset: 'highcharts.jpg' },
   { name: 'Three.js', asset: 'threejs.png' },
