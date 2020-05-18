@@ -48,6 +48,14 @@ export default class DesktopInterestsPanel extends Component<DesktopInterestsPan
     return `${componentNameRoot}${interestsComponentMap[currentInterest.name]}`
   }
 
+  get isFirstIndex(): boolean {
+    return this.centerIndex === 0;
+  }
+
+  get isLastIndex(): boolean {
+    return this.centerIndex === interests.length - 1;
+  }
+
   noop(): void {}
 
   @action
