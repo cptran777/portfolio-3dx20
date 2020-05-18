@@ -1,3 +1,23 @@
-<div class={{@class}}>
-  Cosplay
+<div class="{{@class}} desktop-interests-virtual-reality">
+  <h3>Cosplay, Crafting, and Arduino</h3>
+  <div class="desktop-interests-virtual-reality__content">
+    <p>
+      One of the reasons I became a software developer was the desire to create things. That doesn't
+      just stop at software, either. For the past year, I've been getting into crafting costume
+      props and taking them to conventions. I've even begun to up my game and starting working on
+      hooking electronic components and an Arduino board to my costumes to create moving/mechanical
+      parts.
+    </p>
+    {{#if @isActive}}
+      <div class="desktop-interests-cosplay__photos" {{did-insert this.triggerCurrentPhotoUpdate}}>
+        {{#each this.photos as |photo idx|}}
+          <img
+            src={{photo.asset}}
+            alt={{photo.title}}
+            class="desktop-interests-cosplay__photo desktop-interests-cosplay__photo--offset-{{rotation idx this.currentPhotoIndex this.photos.length}}"
+          />
+        {{/each}}
+      </div>
+    {{/if}}
+  </div>
 </div>
