@@ -231,3 +231,59 @@
     }
   }
 }
+
+.desktop-interests-music {
+  $column-width: 230px;
+
+  display: flex;
+  flex-direction: column;
+
+  &__header, &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 16px;
+  }
+
+  &__title {
+    width: $column-width;
+    text-align: center;
+  }
+
+  &__visualization {
+    width: $column-width;
+    height: 10px;
+  }
+
+  &__playlist {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    text-align: justify;
+  }
+
+  &__song {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4px;
+    cursor: pointer;
+    background-color: inherit;
+    font-family: inherit;
+    font-size: 14px;
+    border: none;
+    color: inherit;
+    padding: none;
+
+    label {
+      cursor: inherit;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      color: get-color(secondary-blue5);
+    }
+  }
+}

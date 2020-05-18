@@ -1,3 +1,21 @@
-<div class={{@class}}>
-  Music
+<div class="{{@class}} desktop-interests-music">
+  <section class="desktop-interests-music__header">
+    <h3 class="desktop-interests-music__title">Music</h3>
+    <YoutubePlayer class="desktop-interests-music__player" @videoId={{this.currentSong.id}}/>
+  </section>
+  <section class="desktop-interests-music__content">
+    <div class="desktop-interests-music__visualization">
+      {{!-- This is a placeholder --}}
+    </div>
+    <div class="desktop-interests-music__playlist">
+      {{#each this.musicList as |song|}}
+        <button
+          {{on "click" (fn this.updateCurrentSong song)}}
+          class="desktop-interests-music__song"
+        >
+          <label>{{song.artist}}</label> <label>{{song.spacer}} {{song.name}}</label>
+        </button>
+      {{/each}}
+    </div>
+  </section>
 </div>
