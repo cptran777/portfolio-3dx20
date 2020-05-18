@@ -17,7 +17,10 @@ const games = [
   ...game,
   asset: `${logoImageRoot}${game.asset}`
 }));
-interface DesktopInterestsPanelGamingArgs {}
+interface DesktopInterestsPanelGamingArgs {
+  // Whether or not this panel is the active one in the user vision
+  isActive: boolean;
+}
 
 export default class DesktopInterestsPanelGaming extends Component<DesktopInterestsPanelGamingArgs> {
   games = games;
@@ -26,7 +29,9 @@ export default class DesktopInterestsPanelGaming extends Component<DesktopIntere
   currentGameIndex = 0;
 
   updateCurrentGame(): void {
-    this.currentGameIndex = (this.currentGameIndex + 1) % games.length;
+    if (this.args.isActive) {
+      this.currentGameIndex = (this.currentGameIndex + 1) % games.length;
+    }
 
     setTimeout(() => this.updateCurrentGame(), 2500);
   }
