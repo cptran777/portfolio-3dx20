@@ -1,0 +1,112 @@
+.portfolio-intro {
+  @include basic-container();
+  align-items: center;
+  justify-content: center;
+  background-color: get-color(primary-blue5);
+  color: get-color(white);
+
+  &__title {
+    font-size: 2rem;
+    margin-bottom: 12px;
+  }
+
+  &__content {
+    width: 50vw;
+    font-family: Roboto Arial, Helvetica, sans-serif;
+  }
+}
+
+.portfolio-datahub {
+  @include basic-container();
+  background-color: get-color(primary-blue);
+  justify-content: center;
+  align-items: center;
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    font-family: Roboto Arial, Helvetica, sans-serif;
+  }
+
+  &__logo-container {
+    position: relative;
+    height: 256px;
+    width: 256px;
+  }
+
+  &__datahub-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 256px;
+    z-index: 1;
+  }
+
+  &__linkedin-logo {
+    position: absolute;
+    z-index: 2;
+    width: 128px;
+    top: 176px;
+    right: 0;
+  }
+
+  &__links {
+    width: 196px;
+    word-wrap: break-word;
+    margin-left: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    a {
+      color: get-color(secondary-blue5);
+      margin-bottom: 24px;
+
+      &:hover {
+        color: get-color(white);
+      }
+    }
+  }
+}
+
+.portfolio-avalon {
+  @include basic-container();
+  justify-content: center;
+  align-items: center;
+  background-color: get-color(secondary-blue5, 0.5);
+
+  img {
+    width: 396px;
+    border-radius: 10px;
+    margin-bottom: 24px;
+  }
+
+  &__content {
+    width: 396px;
+    font-family: Roboto Arial, Helvetica, sans-serif;
+  }
+
+  &__options {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  &__link {
+    border: 1px solid get-color(primary-blue);
+    border-radius: 5px;
+    padding: 2px 4px;
+
+    &:hover {
+      color: get-color(secondary-blue);
+      border: 1px solid get-color(secondary-blue);
+    }
+  }
+}
+
+.portfolio-reeltime {
+  @include basic-container();
+  justify-content: center;
+  align-items: center;
+  background-color: get-color(black);
+  color: get-color(secondary-blue5);
+}

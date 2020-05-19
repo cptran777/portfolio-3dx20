@@ -1,0 +1,31 @@
+<section class="portfolio-avalon">
+  <img
+    src="assets/images/project-avalon.png"
+    alt="DataHub Logo"
+  />
+
+  <div class="portfolio-avalon__content">
+    <h3>Avalon</h3>
+    <p>
+      VR application using WebGL, websockets, and Node backend to connect mobile players in a fun
+      rendition of the popular board game.
+    </p>
+    <div class="portfolio-avalon__options">
+      <LinkTo
+        class="portfolio-avalon__link"
+        @route="portfolio.avalon"
+      >
+        Tech Discussion
+      </LinkTo>
+      <a
+        class="portfolio-avalon__link"
+        href="https://github.com/CapriciousSmash/avalon-game"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Github
+      </a>
+    </div>
+  </div>
+</section>
+{{yield}}

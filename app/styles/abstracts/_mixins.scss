@@ -3,3 +3,20 @@
     font-size: 36px;
   }
 }
+
+@mixin fill-screen() {
+  width: 100vw;
+  height: 100vh;
+}
+
+@mixin use-flex($direction) {
+  display: flex;
+  flex-direction: $direction;
+}
+
+@mixin basic-container {
+  @include fill-screen();
+  @include use-flex(column);
+  overflow: hidden;
+  padding-left: $min-navbar-width;
+}

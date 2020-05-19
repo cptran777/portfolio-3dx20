@@ -1,0 +1,31 @@
+<section class="portfolio-avalon portfolio-reeltime">
+  <img
+    src="assets/images/project-reeltime.png"
+    alt="ReelTime Photo"
+  />
+
+  <div class="portfolio-avalon__content">
+    <h3>ReelTime</h3>
+    <p>
+      P2P video streaming using ReactJS, WebRTC, websockets, and Node to connect people to watch
+      videos together.
+    </p>
+    <div class="portfolio-avalon__options">
+      <LinkTo
+        class="portfolio-avalon__link"
+        @route="portfolio.reeltime"
+      >
+        Tech Discussion
+      </LinkTo>
+      <a
+        class="portfolio-avalon__link"
+        href="https://github.com/tryreeltime/tryreeltime"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Github
+      </a>
+    </div>
+  </div>
+</section>
+{{yield}}
