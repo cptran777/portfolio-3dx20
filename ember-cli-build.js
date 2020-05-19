@@ -4,7 +4,9 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
-    // Add options here
+    fingerprint: {
+      exclude: ['public/assets/images/']
+    }
   });
 
   app.import('node_modules/three/build/three.min.js');
