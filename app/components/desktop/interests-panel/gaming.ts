@@ -2,7 +2,7 @@ import Component from '@glimmer/component';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 
-const logoImageRoot = 'assets/images/';
+const logoImageRoot = '/assets/images/';
 
 const games = [
   { name: 'Skyrim', asset: 'skyrim.jpg' },

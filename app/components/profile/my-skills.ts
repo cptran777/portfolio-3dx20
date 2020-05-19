@@ -2,7 +2,7 @@ import Component from '@glimmer/component';
 import { inject as service } from '@ember/service';
 import DeviceResolution, { ScreenResolution } from 'portfolio-3dx20/services/device-resolution';
 
-const logoImageRoot = 'assets/images/';
+const logoImageRoot = '/assets/images/';
 
 const skills = [
   { name: 'Javascript', asset: 'js.png' },

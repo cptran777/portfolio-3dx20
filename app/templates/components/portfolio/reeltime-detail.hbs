@@ -1,0 +1,89 @@
+<section class="portfolio-detail background--primary5">
+  <img
+    class="portfolio-detail__main-image"
+    src="/assets/images/project-reeltime.png"
+    alt="ReelTime Main"
+  />
+  <h3>ReelTime</h3>
+  <span>Tech Stack</span>
+  <div class="portfolio-detail__tech-stack">
+    {{#each this.techStack as |skill|}}
+      <img
+        class="portfolio-detail__tech-skill"
+        src={{skill.asset}}
+        alt={{skill.name}}
+      />
+    {{/each}}
+  </div>
+</section>
+<section class="portfolio-detail background--secondary5">
+  <h3>Front End</h3>
+  <div class="portfolio-detail__content">
+    <p>
+      The front end of Reel Time is built using the React framework. Its lightweight view-only package allowed the team to easily build out the application component by component and connect these to websockets and the WebRTC code.
+    </p>
+  </div>
+</section>
+<section class="portfolio-detail">
+  <h3>Making a Connection</h3>
+  <div class="portfolio-detail__content">
+    <p>
+      The meat of the application lies in the structure for peer-to-peer networking in order to make the video calls and stream video.
+    </p>
+    <p>
+      There were two viable structures to form a multi-peer network. The first was a mesh formation, meaning that every client would form a data channel between itself and every other client in the system. The second is a star formation in which one "host" creates a connection with every other client in the system. The advantage of a star formation is that all communication goes to the host and then is redirected to the appropriate other clients. However, this requires the host to handle a large amount of connections and data transfer on its own and would normally require a very powerful processor on the host side. THe mesh formation solves this by sharing the load between all clients. One client can communicate directly with another without going through the host, but this leads to a much bigger amount of connections required and can lead to a messy multi-peer system.
+    </p>
+    <div class="portfolio-detail__gallery">
+      <img
+        class="portfolio-detail__gallery-image"
+        src="/assets/images/mesh.png"
+        alt="Mesh Network"
+      />
+      <img
+        class="portfolio-detail__gallery-image"
+        src="/assets/images/star.png"
+        alt="Star Network"
+      />
+    </div>
+  </div>
+</section>
+<section class="portfolio-detail background--primary">
+  <h3>Making a Connection, Part 2</h3>
+  <div class="portfolio-detail__content">
+    <p>
+      The Reel Time solution mixed the ideas of both formations to best fit the needs of the application. There were two kinds of connections that had to be formed for the application, one for the actual movie streaming and one for the video chat. For video streaming, the star formation was an appropriate method because movie streaming could happen as a unidirectional flow of data. That means the host did not have to handle incoming streams between clients.
+    </p>
+    <p>
+      A user uploads a fragmented mp4 file that is then broken into "chunks" and these chunks can be sent as packets to be attached to the HTML5 video component on each receiver client. A link from the host can be sent to receivers containing the domain name and the key that Reel Time's server can use to identify and make the handshake connections between clients.
+    </p>
+    <p>
+      Considerations were made for the kind of structure for the video chat. Since video chat is two way data flow, a host would have to have a lot of processing power to handle a star network structure. Since the connections are expected to be made by typical consumer clients, a host is not expected to have a lot of power. A mesh formation was decidedly the best option. Creation of the mesh formation piggybacks off of the star formation. A host still exists as the central node for this formation and a star is formed first with each new node as receiver clients join the network. The host keeps track of the connections it has made and sends this information to each new client, which then triggers that client to form the data connections with each other node in the network in order to make the video stream connections.
+    </p>
+  </div>
+</section>
+<section class="portfolio-detail">
+  <h3>Gallery</h3>
+  <div class="portfolio-detail__gallery">
+    <img
+      class="portfolio-detail__gallery-image"
+      src="/assets/images/project-reeltime-gal-1.png"
+      alt="ReelTime Gallery 1"
+    />
+    <img
+      class="portfolio-detail__gallery-image"
+      src="/assets/images/project-reeltime-gal-2.png"
+      alt="ReelTime Gallery 2"
+    />
+  </div>
+  <div class="portfolio-detail__footer">
+    <LinkTo class="portfolio-detail__link" @route="portfolio.index">Go Back</LinkTo>
+    <a
+      class="portfolio-detail__link"
+      href="https://github.com/tryreeltime/tryreeltime"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Github
+    </a>
+  </div>
+</section>

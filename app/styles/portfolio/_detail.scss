@@ -1,0 +1,57 @@
+.portfolio-detail {
+  @include basic-container();
+  align-items: center;
+  justify-content: center;
+
+  &__main-image {
+    width: 256px;
+    border-radius: 10px;
+  }
+
+  &__tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    width: 498px;
+  }
+
+  &__tech-skill {
+    height: 72px;
+    width: 72px;
+    margin: 4px;
+    border-radius: 5px;
+  }
+
+  &__content {
+    width: 512px;
+    font-family: Roboto, Arial, Helvetica, sans-serif;;
+  }
+
+  &__gallery {
+    width: 512px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__gallery-image {
+    width: 212px;
+    border-radius: 10px;
+    flex-wrap: wrap;
+  }
+
+  &__footer {
+    width: 512px;
+    padding-top: 24px;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__link {
+    padding: 4px 8px;
+    border: 1px solid get-color(primary-blue);
+
+    &:hover {
+      color: get-color(secondary-blue);
+      border: 1px solid get-color(secondary-blue);
+    }
+  }
+}
