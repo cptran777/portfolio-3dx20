@@ -41,6 +41,7 @@
       <button
         {{on "click" (fn this.setActiveIndex index)}}
         class="interests-desktop-panel__icon-container interests-desktop-panel__icon-container--offset-{{subtract index this.centerIndex}}"
+        type="button"
       >
         <img
           src={{interest.asset}}
