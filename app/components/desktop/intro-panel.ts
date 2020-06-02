@@ -44,10 +44,15 @@ export default class DesktopIntroPanel extends Component<DesktopIntroPanelArgs> 
     var renderer = new THREE.WebGLRenderer({ alpha: true });
     renderer.setSize(600, 500);
     element.appendChild(renderer.domElement);
-    var geometry = new THREE.BoxGeometry(250, 250, 250);
-    var material = new THREE.MeshBasicMaterial({ color: 0x81d2ff });
+    const geometry = new THREE.IcosahedronGeometry(200, 0);
+    const material = new THREE.MeshStandardMaterial({ color: 0x81d2ff });
+    // var material = new THREE.MeshBasicMaterial({ color: 0x81d2ff });
     var cube = new THREE.Mesh(geometry, material);
     scene.add(cube);
+
+    const light = new THREE.DirectionalLight( 0xffffff, 0.9 );
+    light.translateZ(1);
+		scene.add( light );
 
     camera.position.z = 500;
 
