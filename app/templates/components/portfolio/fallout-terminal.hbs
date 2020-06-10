@@ -1,0 +1,32 @@
+<section class="portfolio-fallout">
+  {{#if this.isPlayingGame}}
+      <div class="fallout-demo-container">
+        <iframe
+          src="https://dry-river-94850.herokuapp.com/"
+          title="Fallout Hacker Terminal Demo"
+          class="fallout-demo-frame"
+          height="585"
+          width="800"
+        >
+        </iframe>
+      </div>
+    {{else}}
+
+      <div class="portfolio-avalon__content">
+        <h3>Fallout Terminal Hacker</h3>
+        <p>
+          While doing a tutorial for a basic Unity game, I realized that there was a lot of similarities
+          with a hacking terminal from the Fallout series so decided to modify the existing assets and
+          recreate something like that mini-game as a fun little weekend project. It's rough and has some
+          bugs to be worked out still, but worth trying out.
+        </p>
+        <div class="portfolio-avalon__options">
+          <button class="portfolio-fallout__button" {{on "click" this.playGame}} type="button">
+            Play
+          </button>
+        </div>
+      </div>
+
+    {{/if}}
+
+</section>

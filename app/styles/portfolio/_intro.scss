@@ -110,3 +110,29 @@
   background-color: get-color(black);
   color: get-color(secondary-blue5);
 }
+
+.portfolio-fallout {
+  @include basic-container();
+  justify-content: center;
+  align-items: center;
+  background-color: get-color(terminal-black);
+  color: get-color(terminal-green);
+
+  &__button {
+    border: 1px solid get-color(terminal-green);
+    color: get-color(terminal-green);
+    font-size: 18px;
+    border-radius: 5px;
+    background: none;
+    cursor: pointer;
+
+    &:hover {
+      border: 1px solid get-color(terminal-green-light);
+      color: get-color(terminal-green-light);
+      background-color: get-color(primary-blue);
+    }
+  }
+
+  .fallout-demo-frame {
+  }
+}
