@@ -136,3 +136,26 @@
   .fallout-demo-frame {
   }
 }
+
+.portfolio-boosto {
+  @include basic-container();
+  justify-content: center;
+  align-items: center;
+  background-color: get-color(primary-blue5);
+  color: get-color(white);
+
+  &__button {
+    border: 1px solid get-color(white);
+    color: get-color(white);
+    font-size: 18px;
+    border-radius: 5px;
+    background: none;
+    cursor: pointer;
+
+    &:hover {
+      border: 1px solid get-color(primary-blue);
+      color: get-color(primary-blue);
+      background-color: get-color(white);
+    }
+  }
+}

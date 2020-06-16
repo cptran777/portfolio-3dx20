@@ -1,0 +1,33 @@
+<section class="portfolio-boosto">
+  {{#if this.isPlayingGame}}
+      <div class="fallout-demo-container">
+        <iframe
+          src="https://blooming-waters-03703.herokuapp.com/"
+          title="Rocket Game Demo"
+          class="fallout-demo-frame"
+          height="580"
+          width="864"
+        >
+        </iframe>
+      </div>
+    {{else}}
+
+      <div class="portfolio-avalon__content">
+        <h3>Rocket Game</h3>
+        <p>
+          Continuing learning Unity, making a slightly more complex game that I'll leave as a fun little demo
+          here. Added some additional twist on top of the base game from the learnings.
+          Press SPACE to thrust and A/D keys to tilt the rocket. All coins must be collected before reaching
+          the green platform at the end.
+        </p>
+        <p>Music by bensound.com</p>
+        <div class="portfolio-avalon__options">
+          <button class="portfolio-boosto__button" {{on "click" this.playGame}} type="button">
+            Play
+          </button>
+        </div>
+      </div>
+
+    {{/if}}
+
+</section>
