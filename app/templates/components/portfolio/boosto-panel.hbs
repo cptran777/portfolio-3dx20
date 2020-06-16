@@ -1,5 +1,5 @@
 <section class="portfolio-boosto">
-  {{#if this.isPlayingGame}}
+  {{#if @isPlaying}}
       <div class="fallout-demo-container">
         <iframe
           src="https://blooming-waters-03703.herokuapp.com/"
@@ -22,7 +22,11 @@
         </p>
         <p>Music by bensound.com</p>
         <div class="portfolio-avalon__options">
-          <button class="portfolio-boosto__button" {{on "click" this.playGame}} type="button">
+          <button
+            class="portfolio-boosto__button"
+            {{on "click" (fn @playGame @gameId)}}
+            type="button"
+          >
             Play
           </button>
         </div>
